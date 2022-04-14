@@ -18,10 +18,10 @@ export class RegisterComponent implements OnInit {
 
   creteForm(){
     this.form=this.formBuilder.group({
-      name:[null,Validators.required],
-      email:['',Validators.required,Validators.email],
+      name:['',Validators.required],
+      email:['',Validators.required],
       password:['',Validators.required,Validators.minLength(6)],
-      confirmpassword:['',Validators.required]
+      confirmPassword:['',Validators.required]
     });
   }
 
