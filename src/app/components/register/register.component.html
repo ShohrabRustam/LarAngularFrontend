@@ -2,8 +2,8 @@
   <header class="bg-dark text-white p-2 mb-2 text-center">
     <h1>Register</h1>
   </header>
-  <form (ngSubmit)="submit()" >
-    <div class="form-group" [formGroup]="form">
+  <form (ngSubmit)="submit()" [formGroup]="form">
+    <div class="form-group" >
       <label for="name">Name</label>
       <input type="text" formControlName="name" name="name" class="form-control" placeholder="Enter Your Name" [ngClass]="{'is-invalid': submitted && f.name.errors}">
       <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
@@ -28,12 +28,12 @@
 
     <div class="form-group">
       <label for="passoword">Password</label>
-      <input type="password" formControlName="password"  name="passoword" class="form-control" placeholder="Passoword" [ngClass]="{'is-invalid': submitted && f.passoword.errors}">
-      <div *ngIf="submitted && f.passoword.errors" class="invalid-feedback">
-        <div *ngIf="f.passoword.errors.required">
+      <input type="password" formControlName="password"  name="passoword" class="form-control" placeholder="Passoword" [ngClass]="{'is-invalid': submitted && f.password.errors}">
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">
           Password is required
         </div>
-        <div *ngIf="f.passoword.errors.minlength">
+        <div *ngIf="f.password.errors.minlength">
           password must be atleast 6 characters
           </div>
       </div>
@@ -41,7 +41,7 @@
 
     <div class="form-group">
       <label for="passoword">Confirm-Password</label>
-      <input type="password" formControlName="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm-Password" [ngClass]="{'is-invalid': submitted && f.confirmpassword.errors}">
+      <input type="password" formControlName="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm-Password" [ngClass]="{'is-invalid': submitted && f.confirmPassword.errors}">
       <div *ngIf="f.confirmPassword.errors.required">
         Confirm Password is required
       </div>
