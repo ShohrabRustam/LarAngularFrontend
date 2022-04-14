@@ -3,7 +3,6 @@
     <h1>Register</h1>
   </header>
   <form (ngSubmit)="submit()" >
-
     <div class="form-group" [formGroup]="form">
       <label for="name">Name</label>
       <input type="text" formControlName="name" name="name" class="form-control" placeholder="Enter Your Name" [ngClass]="{'is-invalid': submitted && f.name.errors}">
