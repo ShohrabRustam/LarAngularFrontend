@@ -16,16 +16,38 @@
 
     <div class="form-group"  >
       <label for="email">Email</label>
-      <input type="text" formControlName="email" name="email" class="form-control" placeholder="Enter Your Email">
+      <input type="text" formControlName="email" name="email" class="form-control" placeholder="Enter Your Email" [ngClass]="{'is-invalid': 'submitted && f.email.errors'}">
+      <div *ngIf="'submitted && f.email.errors'" class="invalid-feedback">
+        <div *ngIf="'submitted && f.email.errors'">
+          Email is required
+        </div>
+        <div *ngIf="'f.email.errors.email'">
+          Email must be a valid email address
+          </div>
+      </div>
     </div>
 
     <div class="form-group">
       <label for="passoword" formControlName="password">Password</label>
-      <input type="password" name="passoword" class="form-control" placeholder="Passoword">
+      <input type="password" name="passoword" class="form-control" placeholder="Passoword" [ngClass]="{'is-invalid': 'submitted && f.passoword.errors'}">
+      <div *ngIf="'submitted && f.passoword.errors'" class="invalid-feedback">
+        <div *ngIf="'submitted && f.passoword.errors'">
+          Password is required
+        </div>
+        <div *ngIf="'f.passoword.errors.minlength'">
+          password must be atleast 6 character
+          </div>
+      </div>
     </div>
     <div class="form-group">
       <label for="passoword">Confirm-Password</label>
       <input type="password" formControlName="confirm-password" name="confirm-password" class="form-control" placeholder="Confirm-Password">
+      <div *ngIf="'submitted && f.passoword.errors'">
+        Confirm Password is required
+      </div>
+      <div *ngIf="'f.passoword.errors.mustMatch'">
+        password must be matched
+        </div>
     </div>
     <button type="submit" class="btn btn-dark btn-sm mt-4">Register</button>
   </form>
