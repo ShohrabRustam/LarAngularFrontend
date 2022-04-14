@@ -9,16 +9,28 @@ import { FormControl } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  form:any={
-    name:null,
-    email:null,
-    password:null
-  };
-  constructor() { }
-
+  form:any;
+  submitted:boolean=false;
+  constructor(private formBuilder:FormBuilder) { }
   ngOnInit(): void {
+    this.creteForm();
   }
 
-  submit(){}
+  creteForm(){
+    this.form=this.formBuilder.group({
+      name:[null,Validators.required],
+      email:['',Validators.required,Validators.email],
+      password:['',Validators.required,Validators.minLength(6)],
+      confirmpassword:['',Validators.required]
+    });
+  }
+
+  get f(){
+    return this.form.controls;
+  }
+
+  submit(){
+    this.submitted=true;
+  }
 
 }
