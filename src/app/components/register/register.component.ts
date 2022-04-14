@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
+import { MustMatch } from 'src/app/confirm.validator';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,9 @@ export class RegisterComponent implements OnInit {
       name:[null,[Validators.required]],
       email:[null,[Validators.required,Validators.email]],
       password:[null,[Validators.required,Validators.minLength(6)]],
-      confirmPassword:[null,[Validators.required,Validators.minLength(6)]]
+      confirmPassword:[null,[Validators.required]]
+    },{
+        validator: MustMatch('password','confirmPassword')
     });
   }
 
