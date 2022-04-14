@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -7,7 +9,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  // form:any='';
+  form:any={
+    name:null,
+    email:null,
+    password:null
+  };
   constructor() { }
 
   ngOnInit(): void {
