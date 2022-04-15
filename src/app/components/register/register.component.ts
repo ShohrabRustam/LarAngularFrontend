@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
 
   form:any;
   submitted:boolean=false;
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, private toastrService:ToastrService, private dataService:DataService) { }
   ngOnInit(): void {
     this.creteForm();
   }
