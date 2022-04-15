@@ -2,8 +2,8 @@
   <header class="bg-dark text-white p-2 mb-2 text-center">
     <h1>Login</h1>
   </header>
-  <form>
 
+  <form (ngSubmit)="submit()">
     <div class="form-group">
       <label for="email">Email</label>
       <input type="text" name="email" class="form-control" placeholder="Enter Your Email">
@@ -13,6 +13,7 @@
       <label for="passoword">Password</label>
       <input type="password" name="passoword" class="form-control" placeholder="Passoword">
     </div>
+
     <button type="submit" class="btn btn-dark btn-sm mt-4">Login</button>
 
   </form>
