@@ -3,7 +3,7 @@
     <h1>Login</h1>
   </header>
 
-  <form (ngSubmit)="submit()">
+  <form (ngSubmit)="submit()" [formGroup]="form">
     <div class="form-group">
       <label for="email">Email</label>
       <input type="text" name="email" class="form-control" placeholder="Enter Your Email">
