@@ -56,6 +56,11 @@ export class RegisterComponent implements OnInit {
           })
 
         }
+        this.submitted=false;
+        this.form.get('name').reset();
+        this.form.get('email').reset();
+        this.form.get('password').reset();
+        this.form.get('confirmPassword').reset();
       }
     );
   }
