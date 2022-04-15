@@ -20,9 +20,19 @@
 
 
 
+
     <div class="form-group">
       <label for="passoword">Password</label>
-      <input type="password" name="passoword" class="form-control" placeholder="Passoword">
+      <input type="password" formControlName="password" name="passoword" class="form-control" placeholder="Passoword"
+        [ngClass]="{'is-invalid': submitted && f.password.errors}">
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">
+          Password is required
+        </div>
+        <div *ngIf="f.password.errors.minlength">
+          password must be atleast 6 characters
+        </div>
+      </div>
     </div>
 
     <button type="submit" class="btn btn-dark btn-sm mt-4">Login</button>
