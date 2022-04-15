@@ -9,6 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   form:any;
+
+  submitted:boolean=false;
+
   constructor() { }
 
   ngOnInit(): void {
