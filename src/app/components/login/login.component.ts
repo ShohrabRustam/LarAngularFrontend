@@ -12,6 +12,10 @@ export class LoginComponent implements OnInit {
 
   submitted:boolean=false;
 
+  get f(){
+    return this.form.controls;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
