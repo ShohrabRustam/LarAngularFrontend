@@ -16,10 +16,10 @@ export class RegisterComponent implements OnInit {
   submitted:boolean=false;
   constructor(private formBuilder:FormBuilder, private toastrService:ToastrService, private dataService:DataService) { }
   ngOnInit(): void {
-    this.creteForm();
+    this.createForm();
   }
 
-  creteForm(){
+  createForm(){
     this.form=this.formBuilder.group({
       name:[null,[Validators.required]],
       email:[null,[Validators.required,Validators.email]],
@@ -39,6 +39,7 @@ export class RegisterComponent implements OnInit {
     if(this.form.invalid){
       return;
     }
+    this.dataService.registerUser(this.form.value);
   }
 
 }
