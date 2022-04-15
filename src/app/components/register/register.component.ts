@@ -43,7 +43,19 @@ export class RegisterComponent implements OnInit {
     this.dataService.registerUser(this.form.value).subscribe(
       res=>{
         this.data=res;
-        console.log(res);
+        // console.log(res);
+        if(this.data.status===1){
+          this.toastrService.success(JSON.stringify(this.data.message),JSON.stringify(this.data.code),{
+            timeOut:2000,
+            progressBar:true
+          });
+        }else{
+          this.toastrService.error(JSON.stringify(this.data.message),JSON.stringify(this.data.code),{
+            timeOut:2000,
+            progressBar:true
+          })
+
+        }
       }
     );
   }
