@@ -7,5 +7,5 @@ import { environment } from 'src/environments/environment';
 })
 export class DataService {
 
-  constructor() { }
+  constructor(private http:HttpClient ) { }
 }
