@@ -12,4 +12,9 @@ export class DataService {
   registerUser(data:any){
     return this.http.post(environment.apiUrl+'/api/register/',data);
   }
+
+  loginUser(data:any){
+    return this.http.post(environment.apiUrl+'/api/login/',data);
+  }
 }
+
