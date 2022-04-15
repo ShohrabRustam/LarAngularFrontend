@@ -10,5 +10,6 @@ export class DataService {
   constructor(private http:HttpClient ) { }
 
   registerUser(data:any){
+    return this.http.post(environment.apiUrl+'/api/register/',data);
   }
 }
