@@ -13,6 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class RegisterComponent implements OnInit {
 
   form:any;
+  data:any;
   submitted:boolean=false;
   constructor(private formBuilder:FormBuilder, private toastrService:ToastrService, private dataService:DataService) { }
   ngOnInit(): void {
@@ -39,7 +40,12 @@ export class RegisterComponent implements OnInit {
     if(this.form.invalid){
       return;
     }
-    this.dataService.registerUser(this.form.value);
+    this.dataService.registerUser(this.form.value).subscribe(
+      res=>{
+        this.data=res;
+        console.log(res);
+      }
+    );
   }
 
 }
