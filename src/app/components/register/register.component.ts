@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { MustMatch } from 'src/app/confirm.validator';
 import { DataService } from 'src/app/services/data.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
