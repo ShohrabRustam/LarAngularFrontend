@@ -10,8 +10,9 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
 
   form:any;
-
+  data:any;
   submitted:boolean=false;
+  tokken:any;
 
   get f(){
     return this.form.controls;
@@ -27,6 +28,14 @@ export class LoginComponent implements OnInit {
       return;
     }
     else{
+      this.dataService.loginUser(this.form.value).subscribe(
+        res=>{
+          this.data=res;
+          if(this.data.status===1){
+
+          }
+        }
+      )
     }
   }
 
