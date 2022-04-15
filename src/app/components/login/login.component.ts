@@ -48,12 +48,12 @@ export class LoginComponent implements OnInit {
             this.token=this.data.data.token;
             localStorage.setItem('token',this.token);
             this.router.navigate(['/']);
-            this.toastrService.success(JSON.stringify(this.data.massege),JSON.stringify(this.data.code),{
+            this.toastrService.success(JSON.stringify(this.data.message),JSON.stringify(this.data.code),{
               timeOut:2000,
               progressBar:true
             });
           }else if(this.data.status===0){
-            this.toastrService.error(JSON.stringify(this.data.massege),JSON.stringify(this.data.code),{
+            this.toastrService.success(JSON.stringify(this.data.message),JSON.stringify(this.data.code),{
               timeOut:2000,
               progressBar:true
             });
